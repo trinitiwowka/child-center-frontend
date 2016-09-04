@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="myApp">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>child-center</title>
+	<!-- Google font Open Sans -->
+	<link href='https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,600,400italic,600italic,700,700italic,300italic,300' rel='stylesheet' type='text/css'>
+	<link href="content/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="content/css/main.css">
+	<link rel="stylesheet" href="content/css/style.css">
+	<link rel="stylesheet" href="content/css/news.css">
+
+	<!--<link href="content/css/min/main.min.css" rel="stylesheet">-->
+	<!--<link href="content/css/min/style.min.css" rel="stylesheet">-->
+	<!--<link href="content/css/min/news.min.css" rel="stylesheet">-->
+	<!--[if lt IE 9]>
+		<script src="script/lib/other/html5shiv.min.js"></script>
+		<script src="script/lib/other/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body ng-controller="ArticleCtr">
+
+	<div class="container">
+
+		<div class="row block-margin-top"><!-- HEADER BANNER -->
+			<div class="col-lg-50 col-xs-50 block-style header-banner">
+				<a href="index.html"></a>
+			</div>
+		</div><!-- HEADER BANNER -->
+
+		<div class="row block-margin-top"><!-- NAVIGATION -->
+			<div class="col-lg-37 block-style navbar">
+				<div class="navbar-btn">
+					<a href="index.html"><span class="pull-left">О нас</span></a>
+					<a href="index.html"><span class="pull-left">Аутизм</span></a>
+					<a href="index.html"><span class="pull-left navbar-btn-active">Новости</span></a>
+					<a href="index.html"><span class="pull-left">Реквизиты</span></a>
+				</div>
+				<div class="multi-language hidden-xs">
+					<a href="index.html"><span class="pull-right multi-language-active">RU</span></a>
+					<a href="index.html"><span class="pull-right">UK</span></a>
+					<a href="index.html"><span class="pull-right">EN</span></a>
+				</div>
+			</div>
+			<div class="col-lg-12 col-lg-offset-1 visible-lg social">
+				<a class="pull-left" href="index.html"><div class="social-btn-1"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-2"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-3"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-4"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-5"></div></a>
+			</div>
+		</div><!-- NAVIGATION -->
+
+		<div class="row block-margin-top"><!-- CONTENT -->
+
+			<div class="col-md-50 col-sm-50 hidden-lg sidebar">
+				<div class="block-style sidebar-menu">
+					<div><a class="btn-1" href="index.html"><span>ИРЦ</span></a></div>
+					<div><a class="btn-2" href="index.html"><span>Школа</span></a></div>
+					<div><a class="btn-3" href="index.html"><span>Диагностика</span></a></div>
+					<div><a class="btn-4" href="index.html"><span>Родителям</span></a></div>
+				</div>
+			</div>
+			<div class="col-lg-37 col-md-50 col-sm-50 news">
+				<div class="block-style news-page-top">
+					<img class="pull-left news-page-image" src="content/img/news-image/news-image-1.jpg" height="220" width="260">
+					<div class="news-page-title" ng-bind="Article[0].headline"></div>
+					<div class="news-page-text-preview">{{Article[0].fullText}}<img src="http://fakeimg.pl/2000x1000/00CED1/FFF/?text=2000x1000&font=lobster">Culpa consectetur ullam quidem rem suscipit in, incidunt corporis at tempore facilis atque possimus doloribus accusantium dicta qui voluptas consequuntur, ipsam sapiente illum aliquam.
+					<ul>
+						<li>Lorem ipsum.</li>
+						<li>Lorem ipsum.</li>
+						<li>Lorem ipsum.</li>
+						<li>Lorem ipsum.</li>
+						<li>Lorem ipsum.</li>
+					</ul>
+					Excepturi dolor sapiente ut libero nemo nulla ad, necessitatibus omnis in, rem cumque, reprehenderit. Nesciunt voluptatem, voluptas fugit perferendis. <img class="img-responsive" src="http://fakeimg.pl/500x750/00CED1/FFF/?text=500x750&font=lobster">Accusamus porro quis mollitia provident, vitae pariatur eos beatae et, expedita a quo at quia quam neque rem sit qui illum, voluptatum voluptatibus obcaecati possimus debitis ut numquam similique necessitatibus. Commodi, sint iusto. Vel laboriosam quibusdam beatae dolores, sed, voluptatem hic accusamus, excepturi quasi ipsa, repellendus. Optio consequatur, obcaecati culpa repellendus ut natus debitis perspiciatis alias tenetur inventore impedit at reiciendis fuga, <img src="http://fakeimg.pl/600x540/00CED1/FFF/?text=600x540&font=lobster">molestias dignissimos mollitia dolor assumenda. Culpa quia quam officiis dolores beatae rem magni quaerat at incidunt tempora asperiores praesentium ut voluptate earum ipsum aliquam consequatur delectus natus accusantium ratione, fugit commodi esse. Dolore, cum.</div>
+					<div class="news-page-data" ng-bind="Article[0].dateOfPost|date"></div>
+				</div>
+			</div>
+			<div class="col-lg-12 col-lg-offset-1 visible-lg sidebar">
+				<div class="block-style sidebar-menu">
+					<div><a class="btn-1" href="index.html"><span>ИРЦ</span></a></div>
+					<div><a class="btn-2" href="index.html"><span>Школа</span></a></div>
+					<div><a class="btn-3" href="index.html"><span>Диагностика</span></a></div>
+					<div><a class="btn-4" href="index.html"><span>Родителям</span></a></div>
+				</div>
+				<div class="block-style sidebar-banner ">
+					<a href="index.html"><img src="http://fakeimg.pl/240x80/f5f5f5/555/?text=sidebar banner 240x80&font=lobster"></a>
+				</div>
+			</div>
+		</div><!-- CONTENT -->
+
+		<div class="row block-margin-top block-margin-bot"><!-- FOOTER -->
+			<div class="col-lg-37 col-md-29 col-sm-29 col-xs-50 block-style copyright">
+				<div class="pull-left">Центр помощи детям “Цветы жизни”</div>
+				<div class="pull-right">2015 - 2016</div>
+			</div>
+			<div class="col-md-19 col-md-offset-2 col-sm-19 col-sm-offset-2 col-xs-50 hidden-lg social">
+				<a class="pull-left" href="index.html"><div class="social-btn-1"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-2"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-3"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-4"></div></a>
+				<a class="pull-left" href="index.html"><div class="social-btn-5"></div></a>
+				<div class="visible-xs cd-multi-language">
+					<a href="index.html"><span class="pull-right multi-language-active">RU</span></a>
+					<a href="index.html"><span class="pull-right">UK</span></a>
+					<a href="index.html"><span class="pull-right">EN</span></a>
+				</div>
+			</div>
+			<div class="col-lg-12 col-lg-offset-1 visible-lg">
+				<div class="form-group block-style search">
+					<input type="search" class="search-input" placeholder="поиск...">
+				</div>
+			</div>
+		</div><!-- FOOTER -->
+
+	</div>
+
+	<script src="script/lib/jquery/jquery.min.js"></script>
+	<script src="script/lib/bootstrap/bootstrap.js"></script>
+	<script src="script/lib/angular/angular.min.js"></script>
+	<script src="script/app/app.js"></script>
+	<script src="script/app/DataService.js"></script>
+	<script src="script/app/ArticleController.js"></script>
+</body>
+
+</html>

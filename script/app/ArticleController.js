@@ -10,22 +10,22 @@ app.controller('ArticleCtr', ['$scope', '$http', 'dataService',
 
 
         //
-            $scope.Article=[{
+            $scope.Article=[];/*=[{
                 Headline: "Что такое Аутизм",
                 Summary: "",
                 FullText: "Ребенок находится в ситуации постоянного общения - и в утробе матери, и после рождения. Но атмосфера общения - контакт - создается только после рождения. Если мы хотим общаться с конкретным человеком, то свое внимание мы сосредоточиваем на конкретном человеке. Другой человек понимает это и тоже сосредоточивает свое внимание.",
                 DateOfPost: Date.now(),
                 imgUrl: "content/img/news-image/news-image-1.jpg",
                 User: "Admin"
-        }];
+        }];*/
 
-            function reloadArticles() {
-                dataService.getArticle().success(function (data) {
-                   $scope.Articles = data;
-               });
+            function reloadAllArticles() {
+                dataService.getAllArticles().success(function (data) {
+                    $scope.Article = data;
+                });
             }
+            reloadAllArticles()
 
-            reloadArticles();
 
             /*dataService.getDashboard().success(function (data) {
 

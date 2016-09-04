@@ -7,19 +7,27 @@ function dataService($http, globalConstants) {
 
     var service = {
         getArticle:getArticle,
-        addArticle:addArticle
+        addArticle:addArticle,
+        getAllArticles:getAllArticles
     };
 
 
     function getArticle()
     {
-        var subUrl = 'api/Article';
+        var subUrl = 'api/article/Article';
         return $http.get(urlBase + subUrl);
     };
 
     function addArticle(data) {
-        var destinationUrl = urlBase+'api/AddArticle';
+        var destinationUrl = urlBase+'api/article/AddArticle';
         return $http.post(destinationUrl, data);
     };
+
+
+    function getAllArticles()
+    {
+        var subUrl='api/article/GetAllArticles';
+        return $http.get(urlBase + subUrl);
+    }
     return service;
 }

@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="content/css/lib/jquery/jquery-ui.min.css">
   <link rel="stylesheet" href="content/css/main.css">
   <link rel="stylesheet" href="content/css/style.css">
+
   <!--[if lt IE 9]>
     <script src="script/lib/other/html5shiv.min.js"></script>
     <script src="script/lib/other/respond.min.js"></script>
   <![endif]-->
 </head>
 
-<body ng-controller="MyCtrl">
+<body ng-controller="ArticleCtr">
 
   <div class="container">
 
@@ -64,15 +65,15 @@
 
       <div class="news col-lg-37 col-md-50 col-sm-50"><!-- NEWS SECTION -->
 
-        <div class="block-style news-element" ng-repeat="n in news">
+        <div class="block-style news-element" ng-repeat="n in Article">
           <div class="news-left hidden-xs pull-left">
             <img ng-src="{{n.imgUrl}}" height="220" width="260">
           </div>
           <div class="news-right pull-left">
-            <div class="news-title">{{n.title}}</div>
-            <div class="news-text-preview">{{n.article}}</div>
-            <div class="news-data">{{n.data}}</div>
-            <div class="news-more-button"><a ng-href="{{n.newsLink}}">читать полностью</a></div>
+            <div class="news-title" ng-bind="n.headline"></div>
+            <div class="news-text-preview" ng-bind="n.summary"></div>
+            <div class="news-data"ng-bind="n.dateOfPost|date"></div>
+            <div class="news-more-button"><a ng-href="article.html">читать полностью</a></div>
           </div>
         </div>
 
@@ -144,14 +145,7 @@
   <script src="script/lib/angular/angular.min.js"></script>
   <script src="script/app/app.js"></script>
   <script src="script/app/DataService.js"></script>
+  <script src="script/app/ArticleController.js"></script>
 </body>
 
 </html>
-modified:   GenericBackend/GenericBackend.UnitOfWork/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-modified:   GenericBackend/GenericBackend.UnitOfWork/obj/Debug/GenericBackend.UnitOfWork.csproj.FileListAbsolute.txt
-modified:   GenericBackend/GenericBackend/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-deleted:    frontend/example.html
-modified:   frontend/index.html
-modified:   frontend/news.html
-modified:   frontend/script/app/DataService.js
-frontend/script/app/ArticleController.js
