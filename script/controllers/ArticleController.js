@@ -26,7 +26,7 @@ app.controller('ArticleCtr', ['$scope', '$http', 'dataService',
                     $scope.Article = data;
                 });
             }
-            reloadAllArticles()
+            reloadAllArticles();
 
 
             /*dataService.getDashboard().success(function (data) {

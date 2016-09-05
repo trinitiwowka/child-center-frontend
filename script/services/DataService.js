@@ -16,12 +16,12 @@ function dataService($http, globalConstants) {
     {
         var subUrl = 'api/article/Article';
         return $http.get(urlBase + subUrl);
-    };
+    }
 
     function addArticle(data) {
         var destinationUrl = urlBase+'api/article/AddArticle';
         return $http.post(destinationUrl, data);
-    };
+    }
 
 
     function getAllArticles()
