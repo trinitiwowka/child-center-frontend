@@ -67,7 +67,7 @@
 
         <div class="block-style news-element" ng-repeat="n in Article">
           <div class="news-left hidden-xs pull-left">
-            <img ng-src="{{n.imgUrl}}" height="220" width="260">
+            <img data-ng-src="data:image/png;base64,{{n.image}}" height="220" width="260">
           </div>
           <div class="news-right pull-left">
             <div class="news-title" ng-bind="n.headline"></div>
