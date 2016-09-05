@@ -5,25 +5,24 @@ var app = angular.module('myApp');
 
 'use strict';
 app
-    .controller('postNewsCtr', ['$scope', '$state', '$http', 'globalConstants','dataService',
-        function ($scope, $state, $http, globalConstants, dataService) {
+    .controller('postArticleCtr', ['$scope', '$http','dataService',
+        function ($scope, $http, dataService) {
 
-            var objNews ={
-                Headline: $scope.Headline,
-                Summary: $scope.Summary,
-                FullText: $scope.FullText,
-                DateOfPost: new Date(Date.parse($scope.month + '' + $scope.day + $scope.year)),
-                Image: $scope.Image,
-                User: $scope.User
-
+            $scope.objArt ={
+                headline: $scope.headline,
+                summary: $scope.summary,
+                fullText: $scope.fullText,
+                dateOfPost: new Date(Date.parse($scope.month + '' + $scope.day + $scope.year)),
+                image: $scope.image,
+                user: $scope.user
             };
-            function postArticles() {
-                dataService.addArticle(objNews).success(function () {
+
+            $scope.submit = function() {
+                dataService.addArticle($scope.objArt).success(function () {
                     //success
                 });
-            }
 
-
+            };
             //
             /*  $scope.isUploadAvailable = false;
              $scope.users = [];
@@ -33,7 +32,7 @@ app
              $scope.fileUploadMessage = "";
              */
 
-            postArticles();
+
 
             /*dataService.getDashboard().success(function (data) {
 

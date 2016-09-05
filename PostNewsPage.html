@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+
+
+    <link rel="stylesheet" href="content/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="content/css/lib/jquery/jquery-ui.min.css">
+
+    <script src="script/lib/jquery/jquery.min.js"></script>
+    <script src="script/lib/jquery/jquery-ui.min.js"></script>
+    <script src="script/lib/bootstrap/bootstrap.js"></script>
+    <script src="script/lib/angular/angular.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/PostNewsController.js"></script>
+    <script src="app/services/DataService.js"></script>
 </head>
-<body>
+<body ng-controller="postArticleCtr">
 
 
-<form ng-submit="postArticles()">
-    <input type="submit">
-    <input type="text" ng-model="Headline">
+<form name = "postForm" ng-submit="submit();" class="form-horizontal">
+    <div class="form-group">
+        Enter text and hit enter:
+        <input type="text" ng-model="objArt.headline" name="text" id="headline"/>
+    </div>
+    <div class="form-group">
+        Enter summary:
+    <input type="text" ng-model="objArt.summary" name="text" />
+    </div>
 
+    <input type="submit" id="submit" value="Submit" />
 </form>
 
 </body>
