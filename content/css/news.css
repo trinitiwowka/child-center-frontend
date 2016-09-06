@@ -1,7 +1,6 @@
 .news-page-top {
 	min-height: 260px;
 }
-
 .news-page-image {margin: 20px 20px 0 20px;}
 
 @media (max-width: 479px) {.cd-news-page-image {margin: 20px 20px 0 20px; width: 30%; height: 30%;}}
@@ -54,3 +53,12 @@
 	position: absolute;
 	bottom: 20px;
 	right: 20px;}
+.form-group{
+	color: #000;
+}
+.ng-isolate-scope{
+	color: #000;
+}
+.qweqwe{
+	color: #000;
+}
