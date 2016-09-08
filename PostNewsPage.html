@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Add new news</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="content/css/googlecss.css">
 
     <link rel="stylesheet" href="content/css/lib/normalize/normalize.min.css">
     <link rel="stylesheet" href="content/css/lib/bootstrap/bootstrap.min.css">
@@ -54,11 +55,21 @@
             </div>
         </div>
         <div class="social col-lg-12 col-lg-offset-1 visible-lg">
-            <a class="pull-left" href="#"><div class="social-btn-1"></div></a>
-            <a class="pull-left" href="#"><div class="social-btn-2"></div></a>
-            <a class="pull-left" href="#"><div class="social-btn-3"></div></a>
-            <a class="pull-left" href="#"><div class="social-btn-4"></div></a>
-            <a class="pull-left" href="#"><div class="social-btn-5"></div></a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-1"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-2"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-3"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-4"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-5"></div>
+            </a>
         </div>
     </div><!-- NAVIGATION -->
 
@@ -75,52 +86,68 @@
     </div>
 
 
-    <form name = "postForm" ng-submit="submit();" class="PostForm">
+    <form name="postForm" ng-submit="submit();" class="PostForm form-group">
         <div class="form-group">
-           Введите заголовок:
-            <input type="text" ng-model="objArt.headline" name="headline" id="headline"/>
+            <label for="headLine">Введите заголовок:</label>
+            <input type="text" ng-model="objArt.headline" id="headLine"/>
         </div>
         <div class="form-group">
-           Введите краткое описание:
-            <input type="text" ng-model="objArt.summary" name="text" />
+            <label for="description">Введите краткое описание:</label>
+            <input type="text" ng-model="objArt.summary" id="description"/>
+        </div>
+        <div class="form-group">
+            <label for="fullText">Полное описание статьи</label>
+            <textarea ng-model="objArt.fulltext" id="fullText"></textarea>
         </div>
 
         <div class="editor-field">
-            <input type="file" fileread="objArt.image" />
+            <input type="file" fileread="objArt.image" value="Submit"/>
         </div>
-        <input type="submit" id="submit" value="Submit" />
+        <input type="submit" id="submit" class="button-style btn btn-default" value="Оубликовать"/>
     </form>
 
-<div class="qweqwe">
------------------------------------------
-{{objArt}}
------------------------------------------
-</div>
-<div class="status-msg" ng-show="fileUploadSuccess">{{fileUploadMessage}}</div>
+    <div class="qweqwe">
+        -----------------------------------------
+        {{objArt}}
+        -----------------------------------------
+    </div>
 
-<div class="row block-margin-top block-margin-bot"><!-- FOOTER -->
-    <div class="col-lg-37 col-md-29 col-sm-29 col-xs-50 block-style copyright">
-        <div class="pull-left">Центр помощи детям “Цветы жизни”</div>
-        <div class="pull-right">2015 - 2016</div>
-    </div>
-    <div class="col-md-19 col-md-offset-2 col-sm-19 col-sm-offset-2 col-xs-50 hidden-lg social">
-        <a class="pull-left" href="#"><div class="social-btn-1"></div></a>
-        <a class="pull-left" href="#"><div class="social-btn-2"></div></a>
-        <a class="pull-left" href="#"><div class="social-btn-3"></div></a>
-        <a class="pull-left" href="#"><div class="social-btn-4"></div></a>
-        <a class="pull-left" href="#"><div class="social-btn-5"></div></a>
-        <div class="visible-xs multi-language">
-            <a href="#"><span class="pull-right multi-language-active">RU</span></a>
-            <a href="#"><span class="pull-right">UK</span></a>
-            <a href="#"><span class="pull-right">EN</span></a>
+
+    <div class="status-msg" ng-show="fileUploadSuccess">{{fileUploadMessage}}</div>
+
+    <div class="row block-margin-top block-margin-bot"><!-- FOOTER -->
+        <div class="col-lg-37 col-md-29 col-sm-29 col-xs-50 block-style copyright">
+            <div class="pull-left">Центр помощи детям “Цветы жизни”</div>
+            <div class="pull-right">2015 - 2016</div>
         </div>
-    </div>
-    <div class="col-lg-12 col-lg-offset-1 visible-lg">
-        <div class="form-group block-style search">
-            <input type="search" class="search-input" placeholder="поиск...">
+        <div class="col-md-19 col-md-offset-2 col-sm-19 col-sm-offset-2 col-xs-50 hidden-lg social">
+            <a class="pull-left" href="#">
+                <div class="social-btn-1"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-2"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-3"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-4"></div>
+            </a>
+            <a class="pull-left" href="#">
+                <div class="social-btn-5"></div>
+            </a>
+            <div class="visible-xs multi-language">
+                <a href="#"><span class="pull-right multi-language-active">RU</span></a>
+                <a href="#"><span class="pull-right">UK</span></a>
+                <a href="#"><span class="pull-right">EN</span></a>
+            </div>
         </div>
-    </div>
-</div><!-- FOOTER -->
+        <div class="col-lg-12 col-lg-offset-1 visible-lg">
+            <div class="form-group block-style search">
+                <input type="search" class="search-input" placeholder="поиск...">
+            </div>
+        </div>
+    </div><!-- FOOTER -->
 
 </div>
 </body>

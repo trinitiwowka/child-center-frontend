@@ -53,12 +53,19 @@
 	position: absolute;
 	bottom: 20px;
 	right: 20px;}
-.form-group{
+
+.form-group label,input,textarea{
 	color: #000;
+    font-weight: 400;
 }
+
 .ng-isolate-scope{
 	color: #000;
 }
 .qweqwe{
 	color: #000;
+}
+.button-style{
+	color: black;
+    margin-top: 10px;
 }
